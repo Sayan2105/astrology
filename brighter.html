@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celestial Wisdom - Master Astrologer & Numerologist</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+
+        background: linear-gradient(
+          135deg,
+          #fefae0 0%,
+          #fcebb0 25%,
+          #f4a261 50%,
+          #e76f51 75%,
+          #fefae0 100%
+        );
+
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Utility Classes */
+      .text-center {
+        text-align: center;
+      }
+      .relative {
+        position: relative;
+      }
+      .absolute {
+        position: absolute;
+      }
+      .fixed {
+        position: fixed;
+      }
+      .flex {
+        display: flex;
+      }
+      .grid {
+        display: grid;
+      }
+      .block {
+        display: block;
+      }
+      .inline-block {
+        display: inline-block;
+      }
+      .hidden {
+        display: none;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .w-full {
+        width: 100%;
+      }
+      .h-full {
+        height: 100%;
+      }
+      .min-h-screen {
+        min-height: 100vh;
+      }
+
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .mb-2 {
+        margin-bottom: 8px;
+      }
+      .mb-4 {
+        margin-bottom: 16px;
+      }
+      .mb-6 {
+        margin-bottom: 24px;
+      }
+      .mb-8 {
+        margin-bottom: 32px;
+      }
+      .mb-12 {
+        margin-bottom: 48px;
+      }
+      .mr-2 {
+        margin-right: 8px;
+      }
+      .ml-2 {
+        margin-left: 8px;
+      }
+
+      .py-4 {
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+      .py-12 {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      .py-20 {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+      .px-6 {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .px-8 {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+      .px-10 {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      .p-4 {
+        padding: 16px;
+      }
+      .p-8 {
+        padding: 32px;
+      }
+
+      .rounded-full {
+        border-radius: 9999px;
+      }
+      .rounded-3xl {
+        border-radius: 24px;
+      }
+
+      .text-lg {
+        font-size: 18px;
+      }
+      .text-xl {
+        font-size: 20px;
+      }
+      .text-2xl {
+        font-size: 24px;
+      }
+      .text-3xl {
+        font-size: 30px;
+      }
+      .text-4xl {
+        font-size: 36px;
+      }
+      .text-5xl {
+        font-size: 48px;
+      }
+      .text-6xl {
+        font-size: 60px;
+      }
+
+      .font-medium {
+        font-weight: 500;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .italic {
+        font-style: italic;
+      }
+
+      .text-white {
+        color: white;
+      }
+      .text-orange-700 {
+        color: #6b4226;
+      }
+
+      .text-orange-800 {
+        color: #5c3d2e;
+      }
+
+      .text-orange-900 {
+        color: #7c2d12;
+      }
+      .text-pink-600 {
+        color: #6d6875;
+      }
+
+      .text-yellow-400 {
+        color: #facc15;
+      }
+      .text-pink-400 {
+        color: #f472b6;
+      }
+      .text-blue-400 {
+        color: #60a5fa;
+      }
+      .text-green-400 {
+        color: #4ade80;
+      }
+      .text-purple-400 {
+        color: #c084fc;
+      }
+      .text-red-400 {
+        color: #f87171;
+      }
+      .text-indigo-400 {
+        color: #818cf8;
+      }
+
+      .bg-white {
+        background-color: white;
+      }
+      .bg-gradient-orange {
+        background: linear-gradient(45deg, #f4a261, #e76f51);
+      }
+      .bg-gradient-pink {
+        background: linear-gradient(45deg, #b5838d, #6d6875);
+      }
+
+      .bg-gradient-blue {
+        background: linear-gradient(45deg, #60a5fa, #a855f7);
+      }
+      .bg-gradient-green {
+        background: linear-gradient(45deg, #4ade80, #06b6d4);
+      }
+      .bg-gradient-yellow {
+        background: linear-gradient(45deg, #facc15, #fb923c);
+      }
+      .bg-gradient-purple {
+        background: linear-gradient(45deg, #a855f7, #f472b6);
+      }
+      .bg-gradient-red {
+        background: linear-gradient(45deg, #f87171, #f472b6);
+      }
+      .bg-gradient-main {
+        background: linear-gradient(45deg, #f4a261, #b5838d, #6d6875);
+      }
+
+      .shadow-lg {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .drop-shadow-lg {
+        filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04))
+          drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+      }
+
+      /* Grid layouts */
+      .grid-cols-1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      .gap-8 {
+        gap: 32px;
+      }
+      .gap-12 {
+        gap: 48px;
+      }
+
+      .text-golden {
+        color: #f4d35e;
+      }
+      .text-lavender {
+        color: #cdb4db;
+      }
+      .text-sand {
+        color: #e9c46a;
+      }
+
+      /* Responsive grid */
+      @media (min-width: 768px) {
+        .md-grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .lg-grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .lg-grid-cols-4 {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .lg-order-1 {
+          order: 1;
+        }
+        .lg-order-2 {
+          order: 2;
+        }
+      }
+
+      /* Spacing utilities */
+      .space-x-4 > * + * {
+        margin-left: 16px;
+      }
+      .space-x-8 > * + * {
+        margin-left: 32px;
+      }
+
+      .floating-elements {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .floating-element {
+        position: absolute;
+        animation: float 20s infinite linear;
+        opacity: 0.1;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+        }
+      }
+
+      .glow {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+          0 0 40px rgba(255, 255, 255, 0.2);
+      }
+
+      .hover-lift {
+        transition: all 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .sun-rays {
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 255, 255, 0.3) 0%,
+          transparent 70%
+        );
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.6;
+        }
+      }
+
+      .text-gradient {
+        background: linear-gradient(45deg, #e17055, #fab1a0, #fdcb6e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .service-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .love-heart {
+        animation: heartbeat 2s ease-in-out infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .sparkle {
+        animation: sparkle 3s ease-in-out infinite;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      .testimonial-card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(255, 255, 255, 0.8)
+        );
+        backdrop-filter: blur(15px);
+      }
+
+      .backdrop-blur {
+        backdrop-filter: blur(10px);
+      }
+
+      .bg-white-20 {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .bg-white-70 {
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .border-white-30 {
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .border-t {
+        border-top-width: 1px;
+      }
+
+      .border-b {
+        border-bottom-width: 1px;
+      }
+
+      /* Header styles */
+      header {
+        position: relative;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #e17055, #fab1a0, #fdcb6e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+      }
+
+      .nav-links a {
+        color: #9a3412;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #ea580c;
+      }
+
+      /* Button styles */
+      .btn {
+        display: inline-block;
+        padding: 16px 32px;
+        border-radius: 9999px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        transform: scale(1);
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      .btn-primary {
+        background: linear-gradient(45deg, #fb923c, #f472b6);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(45deg, #ea580c, #ec4899);
+      }
+
+      .btn-secondary {
+        background: linear-gradient(45deg, #f472b6, #fb923c);
+        color: white;
+        padding: 12px 24px;
+      }
+
+      .btn-secondary:hover {
+        background: linear-gradient(45deg, #ec4899, #ea580c);
+      }
+
+      /* Service button variants */
+      .btn-pink {
+        background: linear-gradient(45deg, #f472b6, #fb923c);
+      }
+      .btn-pink:hover {
+        background: linear-gradient(45deg, #ec4899, #ea580c);
+      }
+
+      .btn-blue {
+        background: linear-gradient(45deg, #60a5fa, #a855f7);
+      }
+      .btn-blue:hover {
+        background: linear-gradient(45deg, #3b82f6, #9333ea);
+      }
+
+      .btn-red {
+        background: linear-gradient(45deg, #f87171, #f472b6);
+      }
+      .btn-red:hover {
+        background: linear-gradient(45deg, #ef4444, #ec4899);
+      }
+
+      .btn-green {
+        background: linear-gradient(45deg, #4ade80, #06b6d4);
+      }
+      .btn-green:hover {
+        background: linear-gradient(45deg, #22c55e, #0891b2);
+      }
+
+      .btn-yellow {
+        background: linear-gradient(45deg, #facc15, #fb923c);
+      }
+      .btn-yellow:hover {
+        background: linear-gradient(45deg, #eab308, #ea580c);
+      }
+
+      .btn-purple {
+        background: linear-gradient(45deg, #a855f7, #f472b6);
+      }
+      .btn-purple:hover {
+        background: linear-gradient(45deg, #9333ea, #ec4899);
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .nav-links {
+          gap: 16px;
+        }
+
+        .text-6xl {
+          font-size: 40px;
+        }
+
+        .grid-cols-2,
+        .grid-cols-3,
+        .grid-cols-4 {
+          grid-template-columns: 1fr;
+        }
+
+        .lg-order-1,
+        .lg-order-2 {
+          order: 0;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .md-grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .lg-grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .lg-grid-cols-4 {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .lg-order-1 {
+          order: 1;
+        }
+
+        .lg-order-2 {
+          order: 2;
+        }
+      }
+
+      /* Hover effects for zodiac symbols */
+      .zodiac-symbol {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .zodiac-symbol:hover {
+        transform: scale(1.25);
+      }
+
+      /* Max width utilities */
+      .max-w-2xl {
+        max-width: 672px;
+      }
+
+      .leading-relaxed {
+        line-height: 1.625;
+      }
+
+      .z-10 {
+        z-index: 10;
+      }
+
+      .order-1 {
+        order: 1;
+      }
+
+      .order-2 {
+        order: 2;
+      }
+
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      .w-80 {
+        width: 320px;
+      }
+
+      .h-80 {
+        height: 320px;
+      }
+
+      .top-0 {
+        top: 0;
+      }
+
+      .left-1\/2 {
+        left: 50%;
+      }
+
+      .transform {
+        transform: translateX(-50%);
+      }
+
+      .w-96 {
+        width: 384px;
+      }
+
+      .h-96 {
+        height: 384px;
+      }
+
+      .mt-12 {
+        margin-top: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+      <div
+        class="floating-element text-6xl text-yellow-400"
+        style="left: 10%; animation-delay: 0s"
+      >
+        ☀️
+      </div>
+      <div
+        class="floating-element text-4xl text-pink-400"
+        style="left: 20%; animation-delay: 5s"
+      >
+        🌸
+      </div>
+      <div
+        class="floating-element text-5xl text-blue-400"
+        style="left: 30%; animation-delay: 10s"
+      >
+        ✨
+      </div>
+      <div
+        class="floating-element text-3xl text-green-400"
+        style="left: 40%; animation-delay: 15s"
+      >
+        🦋
+      </div>
+      <div
+        class="floating-element text-4xl text-purple-400"
+        style="left: 50%; animation-delay: 3s"
+      >
+        🌙
+      </div>
+      <div
+        class="floating-element text-5xl text-red-400"
+        style="left: 60%; animation-delay: 8s"
+      >
+        💖
+      </div>
+      <div
+        class="floating-element text-3xl text-indigo-400"
+        style="left: 70%; animation-delay: 12s"
+      >
+        🌈
+      </div>
+      <div
+        class="floating-element text-4xl text-yellow-400"
+        style="left: 80%; animation-delay: 18s"
+      >
+        ⭐
+      </div>
+      <div
+        class="floating-element text-5xl text-pink-400"
+        style="left: 90%; animation-delay: 2s"
+      >
+        🌺
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <nav class="container">
+        <div class="logo">
+          <span class="text-4xl mr-2">🌟</span>
+          Celestial Wisdom
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative z-10 py-20 text-center">
+      <div class="container">
+        <div
+          class="sun-rays absolute top-0 left-1/2 transform w-96 h-96 rounded-full"
+        ></div>
+        <div class="relative z-10">
+          <h1 class="text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            <span class="love-heart">💫</span> Unlock Your Cosmic Destiny
+            <span class="love-heart">💫</span>
+          </h1>
+          <p class="text-xl text-orange-900 mb-8 max-w-2xl mx-auto font-medium">
+            Expert Astrologer & Numerologist with 15+ years of experience
+            guiding souls through the celestial wisdom of the stars and numbers
+          </p>
+          <a href="#services" class="btn btn-primary text-lg shadow-lg">
+            <span class="mr-2">✨</span>Discover Your Path<span class="ml-2"
+              >✨</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative z-10">
+      <div class="container">
+        <h2 class="text-5xl font-bold text-center text-orange-800 mb-4">
+          <span class="sparkle">🌟</span> Sacred Services
+          <span class="sparkle">🌟</span>
+        </h2>
+        <p class="text-center text-orange-700 text-lg mb-12">
+          Discover the light within you through cosmic guidance
+        </p>
+
+        <div class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-3 gap-8">
+          <!-- Service Card 1 -->
+          <div class="service-card rounded-3xl p-8 text-center hover-lift">
+            <div class="text-6xl mb-6">🔮</div>
+            <h3 class="text-2xl font-bold text-orange-800 mb-4">
+              Personal Astrology Reading
+            </h3>
+            <p class="text-orange-700 mb-6">
+              Comprehensive birth chart analysis revealing your personality,
+              strengths, challenges, and life purpose through planetary
+              positions.
+            </p>
+            <div class="text-2xl font-bold text-pink-600 mb-4">$150</div>
+            <a href="#contact" class="btn btn-pink"> Book Session 💖 </a>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card rounded-3xl p-8 text-center hover-lift">
+            <div class="text-6xl mb-6">🔢</div>
+            <h3 class="text-2xl font-bold text-orange-800 mb-4">
+              Numerology Life Path Reading
+            </h3>
+            <p class="text-orange-700 mb-6">
+              Discover your life path number, destiny number, and soul urge
+              number to understand your life's mission and inner desires.
+            </p>
+            <div class="text-2xl font-bold text-pink-600 mb-4">$120</div>
+            <a href="#contact" class="btn btn-blue"> Book Session 🌈 </a>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card rounded-3xl p-8 text-center hover-lift">
+            <div class="text-6xl mb-6">💑</div>
+            <h3 class="text-2xl font-bold text-orange-800 mb-4">
+              Relationship Compatibility
+            </h3>
+            <p class="text-orange-700 mb-6">
+              Synastry analysis combining astrology and numerology to understand
+              relationship dynamics and long-term compatibility.
+            </p>
+            <div class="text-2xl font-bold text-pink-600 mb-4">$200</div>
+            <a href="#contact" class="btn btn-red"> Book Session 💕 </a>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card rounded-3xl p-8 text-center hover-lift">
+            <div class="text-6xl mb-6">💼</div>
+            <h3 class="text-2xl font-bold text-orange-800 mb-4">
+              Career & Finance Guidance
+            </h3>
+            <p class="text-orange-700 mb-6">
+              Professional astrology reading focused on career timing, financial
+              opportunities, and business ventures based on your cosmic
+              blueprint.
+            </p>
+            <div class="text-2xl font-bold text-pink-600 mb-4">$180</div>
+            <a href="#contact" class="btn btn-green"> Book Session 🌱 </a>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div class="service-card rounded-3xl p-8 text-center hover-lift">
+            <div class="text-6xl mb-6">🏠</div>
+            <h3 class="text-2xl font-bold text-orange-800 mb-4">
+              Name & Number Correction
+            </h3>
+            <p class="text-orange-700 mb-6">
+              Numerological analysis for name changes, business names, and lucky
+              numbers to align with your highest potential.
+            </p>
+            <div class="text-2xl font-bold text-pink-600 mb-4">$100</div>
+            <a href="#contact" class="btn btn-yellow"> Book Session ☀️ </a>
+          </div>
+
+          <!-- Service Card 6 -->
+          <div class="service-card rounded-3xl p-8 text-center hover-lift">
+            <div class="text-6xl mb-6">🌟</div>
+            <h3 class="text-2xl font-bold text-orange-800 mb-4">
+              Annual Forecast Reading
+            </h3>
+            <p class="text-orange-700 mb-6">
+              Comprehensive yearly prediction combining solar return charts and
+              personal year numerology for strategic life planning.
+            </p>
+            <div class="text-2xl font-bold text-pink-600 mb-4">$250</div>
+            <a href="#contact" class="btn btn-purple"> Book Session 🎯 </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative z-10">
+      <div class="container">
+        <h2 class="text-5xl font-bold text-center text-orange-800 mb-4">
+          <span class="love-heart">💖</span> Master Seraphina Moon
+          <span class="love-heart">💖</span>
+        </h2>
+        <p class="text-center text-orange-700 text-lg mb-12">
+          Your guide to cosmic wisdom and inner peace
+        </p>
+
+        <div class="grid grid-cols-1 lg-grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg-order-1">
+            <div
+              class="w-80 h-80 mx-auto rounded-full bg-gradient-orange p-4 glow"
+            >
+              <div
+                class="w-full h-full rounded-full bg-gradient-pink flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <div class="text-6xl mb-2">🌞</div>
+                  <div class="text-white font-bold text-lg">Master</div>
+                  <div class="text-white font-bold text-lg">Seraphina</div>
+                  <div class="text-white font-bold text-lg">Moon</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="order-1 lg-order-2 bg-white-70 backdrop-blur rounded-3xl p-8 hover-lift"
+          >
+            <p class="text-orange-800 text-lg mb-6 leading-relaxed">
+              Welcome, dear soul seeker. I am Master Seraphina Moon, a
+              third-generation astrologer and certified numerologist with over
+              15 years of experience in the mystical arts. Born under a rare
+              grand trine in water signs, I discovered my gift for reading the
+              cosmic energies at the age of 7.
+            </p>
+
+            <p class="text-orange-800 text-lg mb-6 leading-relaxed">
+              My journey began in the ancient libraries of Rajasthan, India,
+              where I studied under renowned Vedic astrologers and numerology
+              masters. I combine traditional wisdom with modern psychological
+              insights to provide accurate, compassionate guidance.
+            </p>
+
+            <p class="text-orange-800 text-lg mb-8 leading-relaxed">
+              Certified by the International Association of Astrologers and the
+              World Numerology Association, I have guided over 3,000 clients
+              worldwide through life's challenges and opportunities. My
+              specialties include relationship compatibility, career timing, and
+              spiritual awakening through cosmic alignment.
+            </p>
+
+            <div class="flex justify-center space-x-4 flex-wrap">
+              <span class="text-3xl zodiac-symbol">♈</span>
+              <span class="text-3xl zodiac-symbol">♉</span>
+              <span class="text-3xl zodiac-symbol">♊</span>
+              <span class="text-3xl zodiac-symbol">♋</span>
+              <span class="text-3xl zodiac-symbol">♌</span>
+              <span class="text-3xl zodiac-symbol">♍</span>
+              <span class="text-3xl zodiac-symbol">♎</span>
+              <span class="text-3xl zodiac-symbol">♏</span>
+              <span class="text-3xl zodiac-symbol">♐</span>
+              <span class="text-3xl zodiac-symbol">♑</span>
+              <span class="text-3xl zodiac-symbol">♒</span>
+              <span class="text-3xl zodiac-symbol">♓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 relative z-10">
+      <div class="container">
+        <h2 class="text-5xl font-bold text-center text-orange-800 mb-4">
+          <span class="sparkle">✨</span> Sacred Testimonials
+          <span class="sparkle">✨</span>
+        </h2>
+        <p class="text-center text-orange-700 text-lg mb-12">
+          Hearts touched by cosmic wisdom
+        </p>
+
+        <div class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-3 gap-8">
+          <div class="testimonial-card rounded-3xl p-8 hover-lift">
+            <div class="text-4xl mb-4 text-center">🌟</div>
+            <p class="text-orange-800 italic text-lg mb-6 leading-relaxed">
+              "Seraphina's reading changed my life completely. Her numerology
+              insights helped me choose the right career path, and now I'm
+              living my purpose. Truly gifted!"
+            </p>
+            <div class="text-pink-600 font-bold text-center">
+              Ananya R., Mumbai
+            </div>
+          </div>
+
+          <div class="testimonial-card rounded-3xl p-8 hover-lift">
+            <div class="text-4xl mb-4 text-center">💫</div>
+            <p class="text-orange-800 italic text-lg mb-6 leading-relaxed">
+              "I was skeptical at first, but Master Seraphina's astrological
+              insight was so precise it gave me goosebumps. I finally feel
+              aligned with my soul’s journey."
+            </p>
+            <div class="text-pink-600 font-bold text-center">
+              Rohit K., Delhi
+            </div>
+          </div>
+
+          <div class="testimonial-card rounded-3xl p-8 hover-lift">
+            <div class="text-4xl mb-4 text-center">🌙</div>
+            <p class="text-orange-800 italic text-lg mb-6 leading-relaxed">
+              "Her compatibility session gave me clarity in my relationship. We
+              both came out stronger and more connected. Thank you, Master!"
+            </p>
+            <div class="text-pink-600 font-bold text-center">
+              Neha & Aarav, Bangalore
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative z-10">
+      <div class="container">
+        <h2 class="text-5xl font-bold text-center text-orange-800 mb-4">
+          <span class="text-pink-400">📬</span> Get In Touch
+          <span class="text-pink-400">📬</span>
+        </h2>
+        <p class="text-center text-orange-700 text-lg mb-12">
+          Book your session or send your cosmic query
+        </p>
+
+        <form
+          action="#contact"
+          method="POST"
+          class="max-w-2xl mx-auto bg-white-70 backdrop-blur rounded-3xl p-8 shadow-lg"
+        >
+          <div class="mb-6">
+            <label for="name" class="block text-orange-900 font-bold mb-2"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full p-4 rounded-3xl border border-white-30 focus:outline-none"
+            />
+          </div>
+          <div class="mb-6">
+            <label for="email" class="block text-orange-900 font-bold mb-2"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full p-4 rounded-3xl border border-white-30 focus:outline-none"
+            />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block text-orange-900 font-bold mb-2"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full p-4 rounded-3xl border border-white-30 focus:outline-none"
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary shadow-lg">
+              💌 Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-white-70 backdrop-blur border-t border-white-30 py-12 text-center text-orange-800"
+    >
+      <div class="container">
+        <p class="text-lg font-medium mb-4">
+          🌠 Master Seraphina Moon • Guiding You Through The Stars
+        </p>
+        <div class="flex justify-center space-x-8 mb-6">
+          <a href="#home" class="hover:text-pink-600 transition">Home</a>
+          <a href="#services" class="hover:text-pink-600 transition"
+            >Services</a
+          >
+          <a href="#about" class="hover:text-pink-600 transition">About</a>
+          <a href="#testimonials" class="hover:text-pink-600 transition"
+            >Testimonials</a
+          >
+          <a href="#contact" class="hover:text-pink-600 transition">Contact</a>
+        </div>
+        <p class="text-sm text-orange-700">
+          © 2025 Celestial Wisdom. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scroll to sections
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href").slice(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Animate elements on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-in");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document
+        .querySelectorAll(".service-card, .testimonial-card, section")
+        .forEach((el) => {
+          el.classList.add("opacity-0");
+          observer.observe(el);
+        });
+
+      // Animation classes
+      const style = document.createElement("style");
+      style.textContent = `
+    .animate-fade-in {
+        animation: fadeInUp 0.8s ease forwards;
+    }
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+`;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
