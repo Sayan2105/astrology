@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celestial Wisdom - Master Astrologer & Numerologist</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        background: linear-gradient(
+          135deg,
+          #0f0c29 0%,
+          #24243e 50%,
+          #302b63 100%
+        );
+        color: #e8d5b7;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: #fff;
+        border-radius: 50%;
+        animation: twinkle 3s infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      header {
+        padding: 20px 0;
+        position: relative;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(232, 213, 183, 0.1);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #d4af37;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        color: #e8d5b7;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: #d4af37;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+      }
+
+      .hero {
+        text-align: center;
+        padding: 80px 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="moon" cx="50%" cy="30%" r="20%"><stop offset="0%" style="stop-color:%23fff;stop-opacity:0.8"/><stop offset="100%" style="stop-color:%23fff;stop-opacity:0.1"/></radialGradient></defs><circle cx="900" cy="150" r="80" fill="url(%23moon)"/><g fill="%23d4af37" opacity="0.6"><circle cx="200" cy="200" r="1"/><circle cx="300" cy="150" r="1"/><circle cx="500" cy="180" r="1"/><circle cx="700" cy="120" r="1"/><circle cx="150" cy="300" r="1"/><circle cx="450" cy="280" r="1"/><circle cx="800" cy="300" r="1"/><circle cx="1000" cy="250" r="1"/></g></svg>')
+          center/cover no-repeat;
+        position: relative;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: #d4af37;
+        text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+      }
+
+      .hero-content p {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.9;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 15px 40px;
+        background: linear-gradient(45deg, #d4af37, #f4d03f);
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+      }
+
+      .services {
+        padding: 80px 0;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 50px;
+        color: #d4af37;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .service-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        border-color: rgba(212, 175, 55, 0.5);
+      }
+
+      .service-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+        color: #d4af37;
+      }
+
+      .service-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        color: #d4af37;
+      }
+
+      .service-card p {
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .service-price {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #d4af37;
+        margin-bottom: 20px;
+      }
+
+      .book-now {
+        display: inline-block;
+        padding: 10px 25px;
+        background: rgba(212, 175, 55, 0.2);
+        border: 1px solid #d4af37;
+        color: #d4af37;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .book-now:hover {
+        background: #d4af37;
+        color: #2c3e50;
+      }
+
+      .about {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 50px;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      .astrologer-photo {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><defs><radialGradient id="portrait" cx="50%" cy="40%" r="60%"><stop offset="0%" style="stop-color:%23e8d5b7;stop-opacity:0.8"/><stop offset="100%" style="stop-color:%23d4af37;stop-opacity:0.3"/></radialGradient></defs><circle cx="150" cy="150" r="150" fill="url(%23portrait)"/><circle cx="150" cy="120" r="80" fill="none" stroke="%23d4af37" stroke-width="2" opacity="0.6"/><text x="150" y="160" text-anchor="middle" fill="%23d4af37" font-family="serif" font-size="20">Master</text><text x="150" y="180" text-anchor="middle" fill="%23d4af37" font-family="serif" font-size="20">Astrologer</text></svg>')
+          center/cover;
+        border: 3px solid #d4af37;
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        margin: 0 auto;
+      }
+
+      .testimonials {
+        padding: 80px 0;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .testimonial {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+      }
+
+      .testimonial-author {
+        color: #d4af37;
+        font-weight: bold;
+      }
+
+      .contact {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .contact-item {
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .contact-item h3 {
+        color: #d4af37;
+        margin-bottom: 10px;
+      }
+
+      footer {
+        background: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        padding: 30px 0;
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .zodiac-symbols {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .zodiac-symbol {
+        font-size: 2em;
+        color: #d4af37;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+      }
+
+      .zodiac-symbol:hover {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          gap: 15px;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5em;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars"></div>
+
+    <header>
+      <nav class="container">
+        <div class="logo">✨ Celestial Wisdom</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Unlock Your Cosmic Destiny</h1>
+          <p>
+            Expert Astrologer & Numerologist with 15+ years of experience
+            guiding souls through the celestial wisdom of the stars and numbers
+          </p>
+          <a href="#services" class="cta-button">Discover Your Path</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">Sacred Services</h2>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🔮</div>
+            <h3>Personal Astrology Reading</h3>
+            <p>
+              Comprehensive birth chart analysis revealing your personality,
+              strengths, challenges, and life purpose through planetary
+              positions.
+            </p>
+            <div class="service-price">$150</div>
+            <a href="#contact" class="book-now">Book Session</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔢</div>
+            <h3>Numerology Life Path Reading</h3>
+            <p>
+              Discover your life path number, destiny number, and soul urge
+              number to understand your life's mission and inner desires.
+            </p>
+            <div class="service-price">$120</div>
+            <a href="#contact" class="book-now">Book Session</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">💑</div>
+            <h3>Relationship Compatibility</h3>
+            <p>
+              Synastry analysis combining astrology and numerology to understand
+              relationship dynamics and long-term compatibility.
+            </p>
+            <div class="service-price">$200</div>
+            <a href="#contact" class="book-now">Book Session</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>Career & Finance Guidance</h3>
+            <p>
+              Professional astrology reading focused on career timing, financial
+              opportunities, and business ventures based on your cosmic
+              blueprint.
+            </p>
+            <div class="service-price">$180</div>
+            <a href="#contact" class="book-now">Book Session</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Name & Number Correction</h3>
+            <p>
+              Numerological analysis for name changes, business names, and lucky
+              numbers to align with your highest potential.
+            </p>
+            <div class="service-price">$100</div>
+            <a href="#contact" class="book-now">Book Session</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🌟</div>
+            <h3>Annual Forecast Reading</h3>
+            <p>
+              Comprehensive yearly prediction combining solar return charts and
+              personal year numerology for strategic life planning.
+            </p>
+            <div class="service-price">$250</div>
+            <a href="#contact" class="book-now">Book Session</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">Master Seraphina Moon</h2>
+        <div class="about-content">
+          <div class="astrologer-photo"></div>
+          <div>
+            <p>
+              Welcome, dear soul seeker. I am Master Seraphina Moon, a
+              third-generation astrologer and certified numerologist with over
+              15 years of experience in the mystical arts. Born under a rare
+              grand trine in water signs, I discovered my gift for reading the
+              cosmic energies at the age of 7.
+            </p>
+
+            <p>
+              My journey began in the ancient libraries of Rajasthan, India,
+              where I studied under renowned Vedic astrologers and numerology
+              masters. I combine traditional wisdom with modern psychological
+              insights to provide accurate, compassionate guidance.
+            </p>
+
+            <p>
+              Certified by the International Association of Astrologers and the
+              World Numerology Association, I have guided over 3,000 clients
+              worldwide through life's challenges and opportunities. My
+              specialties include relationship compatibility, career timing, and
+              spiritual awakening through cosmic alignment.
+            </p>
+
+            <div class="zodiac-symbols">
+              <span class="zodiac-symbol">♈</span>
+              <span class="zodiac-symbol">♉</span>
+              <span class="zodiac-symbol">♊</span>
+              <span class="zodiac-symbol">♋</span>
+              <span class="zodiac-symbol">♌</span>
+              <span class="zodiac-symbol">♍</span>
+              <span class="zodiac-symbol">♎</span>
+              <span class="zodiac-symbol">♏</span>
+              <span class="zodiac-symbol">♐</span>
+              <span class="zodiac-symbol">♑</span>
+              <span class="zodiac-symbol">♒</span>
+              <span class="zodiac-symbol">♓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">Sacred Testimonials</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial">
+            <div class="testimonial-text">
+              "Seraphina's reading changed my life completely. Her numerology
+              insights helped me choose the right career path, and now I'm
+              living my purpose. Truly gifted!"
+            </div>
+            <div class="testimonial-author">- Sarah M., New York</div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-text">
+              "The relationship compatibility reading was incredibly accurate.
+              It helped my partner and I understand each other better and
+              strengthen our bond. Highly recommended!"
+            </div>
+            <div class="testimonial-author">- David & Lisa K., California</div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-text">
+              "I was skeptical at first, but the annual forecast reading was
+              spot on. Every major event happened exactly as predicted. Master
+              Seraphina is the real deal."
+            </div>
+            <div class="testimonial-author">- Michael R., London</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Begin Your Cosmic Journey</h2>
+        <p>
+          Ready to unlock the secrets of your destiny? Book your personalized
+          reading today and step into your highest potential.
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>📞 Phone Consultations</h3>
+            <p>+1 (555) 123-STARS<br />Available: Mon-Fri 9AM-7PM EST</p>
+          </div>
+          <div class="contact-item">
+            <h3>📧 Email Readings</h3>
+            <p>seraphina@celestialwisdom.com<br />Response within 24 hours</p>
+          </div>
+          <div class="contact-item">
+            <h3>💬 Video Sessions</h3>
+            <p>Zoom & Skype available<br />Book through our calendar system</p>
+          </div>
+          <div class="contact-item">
+            <h3>🏛️ In-Person Readings</h3>
+            <p>Mystic Arts Center<br />123 Spiritual Lane, Sedona AZ</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px">
+          <a href="mailto:seraphina@celestialwisdom.com" class="cta-button"
+            >Schedule Your Reading</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2024 Celestial Wisdom. All rights reserved. | Licensed
+          Astrologer & Numerologist
+        </p>
+        <p>🌟 Illuminating paths since 2009 🌟</p>
+      </div>
+    </footer>
+
+    <script>
+      // Create twinkling stars
+      function createStars() {
+        const starsContainer = document.querySelector(".stars");
+        const numberOfStars = 50;
+
+        for (let i = 0; i < numberOfStars; i++) {
+          const star = document.createElement("div");
+          star.className = "star";
+          star.style.left = Math.random() * 100 + "%";
+          star.style.top = Math.random() * 100 + "%";
+          star.style.animationDelay = Math.random() * 3 + "s";
+          starsContainer.appendChild(star);
+        }
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Initialize stars when page loads
+      window.addEventListener("load", createStars);
+
+      // Add mystical cursor effect
+      document.addEventListener("mousemove", function (e) {
+        const cursor = document.createElement("div");
+        cursor.style.position = "fixed";
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+        cursor.style.width = "4px";
+        cursor.style.height = "4px";
+        cursor.style.background = "#d4af37";
+        cursor.style.borderRadius = "50%";
+        cursor.style.pointerEvents = "none";
+        cursor.style.zIndex = "9999";
+        cursor.style.opacity = "0.7";
+        document.body.appendChild(cursor);
+
+        setTimeout(() => {
+          cursor.remove();
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
